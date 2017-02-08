@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Erfgoed in Kaart Gemeente Purmerend Test dev</title>
+
+		<meta name="author" content="">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+		<link rel="shortcut icon" href="http://www.purmerend.nl/sites/default/files/loketburgers_favicon.ico" type="image/vnd.microsoft.icon" />
+
+		<link rel="stylesheet" type="text/css" href="lib/normalize.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Core.css">
+
+
+		<script type="text/javascript">
+			var dojoConfig = {
+				parseOnLoad: true,
+				isDebug: false,
+				packages: [
+				{
+					name: 'storymaps',
+					location: location.pathname.replace(/\/[^/]+$/, '/') + 'app'
+				}
+				]
+			};
+		</script>
+		
+		<!--END Social Media Links-->
+
+		<!--  Here a user can edit the size and visibility of the numbers that are displayed.
+		By default, this is turned off.  User must remove the comment to activate. -->
+		<!--
+		<style type="text/css">
+			.accordion-header-number {
+				visibility: collapse;
+				width: 0;
+				height: 0;
+				font-size: 0px;
+				}
+			.accordion-header-arrow {
+				top: 0px;
+			}
+		</style>
+		-->
+		
+	</head>
+	<body class="tundra">
+
+		<div id="application-window">
+
+			<div id="content" class="region-center">		
+
+				<div id="map-content" class="region-center">
+
+					<div id="map-pane" class="region-center">
+
+
+						<div class="menu">
+							<!-- Menu links thema 
+							<div id="menulinks">
+								<div id="menuheaderthema" class="menuheader">
+									<div class="menuheadertext">Thema</div>
+									<div id="pijlthema" class="pijl"></div>
+								</div>
+							</div>
+							-->
+							<!-- Menu links Onderzoek 
+							<div id="menurechts">
+							        <div id="menuheaderonderzoek" class="menuheader">
+										<div class="menuheadertext">Onderzoek</div>
+										<div id="pijlonderzoek" class="pijl"></div>
+									</div>
+							</div>
+							-->
+							<div id="menuboomthema" class="menuboom">
+								<div id="menutak"><a href="../Beleg_van_Leiden/index.html">Beleg van Leiden</a></div>
+								<div id="menutak"><a href="../Bodemschatten_en_Bouwgeheimen/index.html">Bodemschatten en bouwgeheimen</a></div>
+								<div id="menutak"><a href="../Landschap/index.html">Landschap</a></div>
+								<div id="menutak"><a href="../Stadsuitbreiding/index.html">Stadsuitbreiding</a></div>
+							    <div id="menutak"><a href="../Stadsverdediging/index.html">Stadsverdediging</a></div>
+								<div id="menutak"><a href="../Topmonumenten/index.html">Topmonumenten</a></div>
+								<div id="menutak"><a href="../Winkelpuien/index.html">Winkelpuien</a></div>
+							</div>
+							<div id="menuboomonderzoek" class="menuboomtest">
+								<div id="menutak" class="onderzoek"><a href="../Cultuurhistorische_atlas/index.html">Cultuurhistorische atlas</a></div>
+								<div id="menutak" class="onderzoek"><a href="../Onderzoeksagenda/index.html">Onderzoeksagenda</a></div>
+								<div id="menutak" class="onderzoekwaarden">
+									<div class="textwaarden">Waardenkaarten</div>
+									<div id="pijlonderzoek" class="pijlwaarden"></div>
+									<div id="menuboomwaardenkaart" class="menuwaardenboom">
+										<div id="menutakwaarden" class="onderzoek"><a href="../Archeologie/index.html">Archeologische waardenkaart</a></div>
+								        <div id="menutakwaarden" class="onderzoek"><a href="../Bouwhistorie/index.html">Bouwhistorische waardenkaart</a></div>
+								        <div id="menutakwaarden" class="onderzoek"><a href="../Cultuurhistorische_waarden/index.html">Cultuurhistorische Waardenkaart</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="legend-wrapper">
+							<div id="legend-toggle" class="legend-toggle">
+								<div id="menuheadertextlegenda">legenda</div>
+								<div class="pijllegenda"></div>
+							</div>
+						</div>
+						
+						<div id="legend-pane" class="legend-pane"></div>
+						
+						<div id="accordion-content"></div><!--/legend-pane-->
+
+						<div id="mobile-header-wrapper">
+							<div id="mobile-navigation-left">
+								<div id="mobile-navigation-arrow-left"></div>
+							</div>
+							<div id="mobile-header">
+								<div id="mobileheadertextwrapper">
+									<div id="mobileheadertext"></div>
+									<div class="pijlaccordion"></div>
+								</div>
+							</div>
+						    <div id="mobile-navigation">
+						    	<div id="mobile-navigation-arrow"></div>
+							</div>
+						</div>
+
+						<div id="side-pane" class="region-left"></div><!--/side-panel-->
+
+						<img class="loader loader80" src="resources/images/app/loader.gif" alt="Loading">
+						<div id="mobile-popup">
+							<div id="close-mobile-popup" class="mobile-close mobile-popup-toggle"><i class="icon-remove"></i></div>
+						</div>
+						
+						<!--/mobile-popup-->
+
+					</div><!--/map-pane-->
+
+				</div><!--/map-content-->
+
+			</div><!--/content-->
+
+		</div><!--application-window-->
+
+		<script type="text/javascript" src="//js.arcgis.com/3.11/"></script>
+		<script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+
+			//GET Application Config
+			require(["storymaps/series/Config"]);
+
+			require(["storymaps/series/core/Core"], function(core){
+				core.init();
+			});
+
+		</script>
+	
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-52675808-7', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+
+	</body>
+</html>
